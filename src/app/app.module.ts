@@ -12,8 +12,6 @@ import { MovieDataService } from './movie-data.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +27,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatExpansionModule,
-   
   ],
-  providers: [MovieDataService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
