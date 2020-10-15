@@ -1,13 +1,13 @@
 <div class="header">
   <div class="imageContainer">
-    <img class="poster" src="../../assets/fight-club.jpeg" alt="" />
+    <img class="poster" src="{{ feeds.poster_path }}" alt="" />
   </div>
   <div class="textContainer">
-    <h1 class="movieTitle">Fight Club</h1>
+    <h1 class="movieTitle">{{ feeds.title }}</h1>
     <p>[movie tag line]</p>
     <p>Genre: Action</p>
     <p>Run Time: 120 min</p>
-    <p>Released: 1999</p>
+    <p>Released: {{ feeds.release_date }}</p>
   </div>
 </div>
 
@@ -15,9 +15,7 @@
   <div class="description">
     <h2>Movie Description</h2>
     <h4>
-      In this provocative drama co-starring Brad Pitt and Edward Norton and
-      directed by David Fincher, a disaffected man and his charismatic friend
-      organize brutal, bare-knuckle boxing matches.
+      {{ feeds.overview }}
     </h4>
     <p>Rated: R (Violence, Drugs, etc etc.)</p>
   </div>
