@@ -12,6 +12,7 @@ const routes: Routes = [
   {
     path: 'movieList',
     component: MovieListComponent,
+    data: { id: 1, name: 'rai' },
   },
   {
     path: 'watchList',

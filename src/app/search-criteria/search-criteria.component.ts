@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter  } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MovieDataService } from '../movie-data.service';
 import {
   NgForm,
@@ -8,6 +8,7 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-criteria',
@@ -22,14 +23,13 @@ export class SearchCriteriaComponent implements OnInit {
   year;
 
   @Output() submitted = new EventEmitter();
-  constructor(private movieDataService: MovieDataService) {}
+  constructor(
+    private movieDataService: MovieDataService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.moviePosterLink = 'https://image.tmdb.org/t/p/w200';
-    // this.movieDataService.getMovieData().subscribe((data) => {
-    //   console.log('data', data);
-    //   this.feeds = data.data;
-    // });
   }
   movieSearchSubmit(form: NgForm) {
     this.submitted.emit({
@@ -84,5 +84,13 @@ export class SearchCriteriaComponent implements OnInit {
   changedYear(e) {
     this.year = e.target.value;
   }
-  movieDetail() {}
+  routeToDetails(id) {
+    const data = this.feeds.find((x) => x.id === id);
+    this.router.navigateByUrl('/movieList', {
+      state: {
+        data: data,
+      },
+    });
+    console.log('data', data);
+  }
 }

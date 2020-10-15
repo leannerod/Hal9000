@@ -115,7 +115,7 @@
   class="moviePoster"
   *ngFor="let feed of feeds; index as i"
   feed="feed"
-  (click)="movieDetail()"
+  (click)="routeToDetails(feed.id)"
 >
   <img
     *ngIf="feed.poster_path != null"
