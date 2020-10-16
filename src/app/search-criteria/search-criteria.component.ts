@@ -21,6 +21,9 @@ export class SearchCriteriaComponent implements OnInit {
   criteria = [];
   genre = [];
   year;
+  watchList = [];
+  isAdded;
+  selectedItem;
 
   @Output() submitted = new EventEmitter();
   constructor(
@@ -52,6 +55,9 @@ export class SearchCriteriaComponent implements OnInit {
       .subscribe((data) => {
         console.log('data', data.results);
         this.feeds = data.results;
+        this.feeds.forEach(feed => {
+          feed.selectedItem = false;
+        });
       });
   }
 
@@ -92,5 +98,13 @@ export class SearchCriteriaComponent implements OnInit {
       },
     });
     console.log('data', data);
+  }
+
+  addToWatchList(id) {
+    const watchMovie = this.feeds.find((x) => x.id === id);
+    console.log(watchMovie, 'movie');
+    this.watchList.push(watchMovie);
+    // this.selectedItem = this.watchList.includes(id);
+    watchMovie.selectedItem = true;
   }
 }
