@@ -8,11 +8,15 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./movie-details.component.scss'],
 })
 export class MovieDetailsComponent implements OnInit {
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
   feeds;
+  constructor(private activatedRoute: Router) {
+    console.log(this.activatedRoute.getCurrentNavigation().extras.state);
+    this.feeds = this.activatedRoute.getCurrentNavigation().extras.state;
+    console.log('feeds data', this.feeds);
+  }
+
   ngOnInit() {
-    this.activatedRoute.data.subscribe((data) => {
-      this.feeds = data;
-    });
+    // this.activatedRoute.data.subscribe((data) => {
+    //   this.feeds = data;
   }
 }

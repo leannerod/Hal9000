@@ -1,7 +1,10 @@
 .imageContainer {
   /* z-index: 1; */
-  width: 200px;
-  height: 400px;
+  width: 300px;
+  height: 500px;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
 }
 .poster {
   width: 100%;
@@ -10,14 +13,21 @@
 .header {
   background-color: blue;
   width: 800px;
-  height: 200px;
+  height: 600px;
   display: flex;
   flex-direction: row;
 }
 .textContainer {
-  width: 600px;
-  height: 200px;
-  background-color: darkgreen;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titlecontainer{}
+.overview{
+  margin: 15px;
 }
 .body {
   width: 800px;

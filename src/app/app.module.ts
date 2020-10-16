@@ -11,6 +11,7 @@ import { WatchListPageComponent } from './watch-list-page/watch-list-page.compon
 import { MovieDataService } from './movie-data.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 @NgModule({
   declarations: [

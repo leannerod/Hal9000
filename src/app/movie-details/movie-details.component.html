@@ -1,51 +1,27 @@
 <div class="header">
   <div class="imageContainer">
-    <img class="poster" src="{{ feeds.poster_path }}" alt="" />
-  </div>
+    <img
+      class="poster"
+      src="https://image.tmdb.org/t/p/w200{{ feeds.data.poster_path }}"
+      alt=""
+    />
+    <p>Released: {{ feeds?.data.release_date }}</p>
+    <p>
+      Rating: <i class="fas fa-star"></i>{{ feeds.data.vote_average }} ({{
+        feeds.data.vote_count
+      }})
+    </p>
+     </div>
   <div class="textContainer">
-    <h1 class="movieTitle">{{ feeds.title }}</h1>
-    <p>[movie tag line]</p>
-    <p>Genre: Action</p>
-    <p>Run Time: 120 min</p>
-    <p>Released: {{ feeds.release_date }}</p>
-  </div>
-</div>
-
-<div class="body">
-  <div class="description">
-    <h2>Movie Description</h2>
-    <h4>
-      {{ feeds.overview }}
-    </h4>
-    <p>Rated: R (Violence, Drugs, etc etc.)</p>
-  </div>
-  <div class="castCrew">
-    <h3>Cast</h3>
-    <div class="castPics">
-      <div class="oneCast">
-        <img
-          class="castPhoto"
-          src="../../assets/No-Photo-Available-NEW-1.png"
-          alt=""
-        />
-        <span class="name">Brad Pitt</span>
-      </div>
-      <div class="oneCast">
-        <img
-          class="castPhoto"
-          src="../../assets/No-Photo-Available-NEW-1.png"
-          alt=""
-        />
-        <span class="name">Edward Norton</span>
-      </div>
-      <div class="oneCast">
-        <img
-          class="castPhoto"
-          src="../../assets/No-Photo-Available-NEW-1.png"
-          alt=""
-        />
-        <span class="name">Some other guy</span>
-      </div>
+    <div class="titlecontainer">
+      <h1 class="movieTitle">{{ feeds?.data.title }}</h1>
+    </div>
+    <div class="overview">
+      <h3>
+        {{ feeds?.data.overview }}
+      </h3>
     </div>
   </div>
 </div>
+
+

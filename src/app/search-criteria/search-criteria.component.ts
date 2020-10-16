@@ -92,7 +92,7 @@ export class SearchCriteriaComponent implements OnInit {
   }
   routeToDetails(id) {
     const data = this.feeds.find((x) => x.id === id);
-    this.router.navigateByUrl('/movieList', {
+    this.router.navigateByUrl('/movieDetails', {
       state: {
         data: data,
       },
