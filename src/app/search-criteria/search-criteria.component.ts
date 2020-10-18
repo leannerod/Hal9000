@@ -100,11 +100,33 @@ export class SearchCriteriaComponent implements OnInit {
     console.log('data', data);
   }
 
-  addToWatchList(id) {
+  watchListToggle(id) {
+    const filteredWatchList = this.watchList.filter((movie) => {
+      return movie.id === id;
+    });
+
     const watchMovie = this.feeds.find((x) => x.id === id);
-    console.log(watchMovie, 'movie');
-    this.watchList.push(watchMovie);
-    // this.selectedItem = this.watchList.includes(id);
-    watchMovie.selectedItem = true;
+
+    if (filteredWatchList.length === 0) {
+      // not in array so we add it to array
+      this.watchList.push(watchMovie);
+      watchMovie.selectedItem = true;
+      console.log('watchlist', this.watchList)
+    } else {
+      // is in array so we remove from array
+      this.watchList = this.watchList.filter((movie) => {
+        return movie.id !== id;
+      })
+      watchMovie.selectedItem = false;
+      console.log('watchList remove', this.watchList);
+    }
+  }
+
+  routeToWatchList() {
+    this.router.navigateByUrl('/watchList', {
+      state: {
+        data: this.watchList,
+      },
+    });
   }
 }

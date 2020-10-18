@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -8,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./watch-list-page.component.scss']
 })
 export class WatchListPageComponent implements OnInit {
-  constructor() { }
+  watchList = [];
+
+  constructor(private activatedRoute: Router) {
+
+    console.log('test', this.activatedRoute.getCurrentNavigation().extras.state);
+    const state = this.activatedRoute.getCurrentNavigation().extras.state;
+    if (state) {
+      this.watchList = state.data;
+    } 
+   }
+
+   
 
   ngOnInit(): void {}
 }

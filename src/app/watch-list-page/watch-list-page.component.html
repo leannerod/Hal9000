@@ -1,1 +1,14 @@
-<p>watch-list-page works!</p>
+<h1>Watch List</h1>
+<div class="watchList">
+    <ul class="movie">
+        <li *ngFor="let movie of watchList; index as i">
+            <!-- movie poster path does not work -->
+            <img src="{{ movie.poster_path }}" alt="">
+            <p>{{ movie.title }}</p>
+            <p>{{movie.release_date}}</p>
+            <p><i class="fas fa-star"></i>{{movie.vote_average}}</p>
+        
+
+        </li>
+    </ul>
+</div>

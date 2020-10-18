@@ -1,14 +1,21 @@
 .moviePoster {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   margin: 30px;
   cursor: pointer;
 }
 
-.searchMovie {
+.searchMovieBtn {
   margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #4facab;
+  padding: 20px 70px;
+  font-size: 24px;
+  border: 1px solid #418f8d;
 }
 
-.searchMovie:hover {
+.searchMovieBtn:hover {
   cursor: pointer;
 }
 
@@ -41,6 +48,3 @@ h4 {
   color: yellow;
 }
 
-.bookmark {
-  color: red;
-}
