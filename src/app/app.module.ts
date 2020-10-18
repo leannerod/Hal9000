@@ -12,6 +12,7 @@ import { MovieDataService } from './movie-data.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     MovieListComponent,
     WatchListPageComponent,
     MovieDetailsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

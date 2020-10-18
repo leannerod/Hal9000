@@ -1,7 +1,15 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MovieDataService } from '../movie-data.service';
-import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import {
+  NgForm,
+  FormBuilder,
+  FormGroup,
+  FormArray,
+  FormControl,
+  Validators,
+} from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { watch } from 'fs';
 
 @Component({
   selector: 'app-search-criteria',
@@ -83,4 +91,29 @@ export class SearchCriteriaComponent implements OnInit {
   changedYear(e) {
     this.year = e.target.value;
   }
+  routeToDetails(id) {
+    const data = this.feeds.find((x) => x.id === id);
+    this.router.navigateByUrl('/movieDetails', {
+      state: {
+        data: data,
+      },
+    });
+    console.log('data', data);
+  }
+
+  addToWatchList(id) {
+    const watchMovie = this.feeds.find((x) => x.id === id);
+    console.log(watchMovie, 'movie');
+    this.watchList.push(watchMovie);
+    // this.selectedItem = this.watchList.includes(id);
+    watchMovie.selectedItem = true;
+  }
+  removeFromWatchList(id){
+    const watchMovie = this.watchList.find((x) => x.id === id);
+    console.log(watchMovie, 'movie');
+    this.watchList.splice(watchMovie, 1);
+    watchMovie.selectedItem = false
+  }
 }
+
+
