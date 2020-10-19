@@ -24,6 +24,7 @@ const routes: Routes = [
     redirectTo: '/search',
     pathMatch: 'full',
   },
+  { path: 'movieDetails', component: MovieDetailsComponent },
 ];
 
 @NgModule({

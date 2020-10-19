@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-list',
@@ -18,9 +17,6 @@ export class MovieListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.activatedRoute.data.subscribe((data) => {
-    //   this.feeds = data;
-    // });
     this.moviePosterLink = 'https://image.tmdb.org/t/p/w200';
   }
 
