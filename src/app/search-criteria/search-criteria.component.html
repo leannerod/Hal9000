@@ -1,1 +1,114 @@
-<p>search-criteria works!</p>
+<h1>Search Criteria</h1>
+
+<form
+  #userForm="ngForm"
+  (ngSubmit)="movieSearchSubmit(userForm)"
+  novalidate
+  class="searchMovie"
+>
+  <input type="text" #name="ngModel" name="movieSearch" ngModel />
+  <button type="submit" class="searchMovieBtn">Search Movie</button>
+</form>
+
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title> <h4>Movie Filters</h4></mat-panel-title>
+  </mat-expansion-panel-header>
+  <form #filterForm="ngForm" (ngSubmit)="movieSearchFilter()" novalidate>
+    <h5>Certification</h5>
+    <input
+      type="checkbox"
+      #name="ngModel"
+      name="certification"
+      value="G"
+      ngModel
+      (change)="checkedEventCriteria($event)"
+    />G
+    <input
+      type="checkbox"
+      #name="ngModel"
+      name="certification"
+      value="PG"
+      ngModel
+      (change)="checkedEventCriteria($event)"
+    />PG
+    <input
+      type="checkbox"
+      #name="ngModel"
+      name="certification"
+      value="PG-13"
+      ngModel
+      (change)="checkedEventCriteria($event)"
+    />PG-13
+    <input
+      type="checkbox"
+      #name="ngModel"
+      name="certification"
+      value="R"
+      ngModel
+      (change)="checkedEventCriteria($event)"
+    />R
+
+    <h5>Genres</h5>
+    <input
+      type="checkbox"
+      #name="ngModel"
+      name="genre"
+      value="28"
+      ngModel
+      (change)="checkedEventGenre($event)"
+    />Action
+    <input
+      type="checkbox"
+      name="genre"
+      #name="ngModel"
+      value="12"
+      ngModel
+      (change)="checkedEventGenre($event)"
+    />Adventure<br />
+    <input
+      type="checkbox"
+      #name="ngModel"
+      name="genre"
+      value="35"
+      ngModel
+      (change)="checkedEventGenre($event)"
+    />Comedy
+    <input
+      type="checkbox"
+      #name="ngModel"
+      name="genre"
+      value="27"
+      ngModel
+      (change)="checkedEventGenre($event)"
+    />Horror<br />
+    <input
+      type="checkbox"
+      #name="ngModel"
+      name="genre"
+      value="10749"
+      ngModel
+      (change)="checkedEventGenre($event)"
+    />Romance<br />
+
+    <h5>Year</h5>
+    <select name="year" id="year" (change)="changedYear($event)">
+      <option value="">None</option>
+      <option value="2010">2010</option>
+      <option value="2011">2011</option>
+      <option value="2012">2012</option>
+      <option value="2013">2013</option>
+      <option value="2014">2014</option>
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+      <option value="2020">2020</option></select
+    ><br />
+    <br />
+    <button type="submit">Filter Movies</button>
+  </form>
+</mat-expansion-panel>
+
+<app-movie-list [feeds]="feeds"></app-movie-list>

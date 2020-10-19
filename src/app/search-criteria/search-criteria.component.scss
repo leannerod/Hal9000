@@ -1,0 +1,49 @@
+.moviePoster {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.searchMovieBtn {
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #4facab;
+  padding: 20px 70px;
+  font-size: 24px;
+  border: 1px solid #418f8d;
+}
+
+.searchMovieBtn:hover {
+  cursor: pointer;
+}
+
+.feedTitle {
+  text-align: center;
+  width: 200px;
+}
+
+.mat-expansion-panel {
+  width: 260px;
+  margin: auto;
+}
+
+.feedRelease {
+  text-align: center;
+  width: 200px;
+}
+
+.feedRating {
+  text-align: center;
+  width: 200px;
+}
+
+h4 {
+  text-align: center;
+  width: 200px;
+}
+
+.fas {
+  color: yellow;
+}

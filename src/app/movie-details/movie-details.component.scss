@@ -1,0 +1,68 @@
+.imageContainer {
+  /* z-index: 1; */
+  width: 300px;
+  height: 500px;
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+}
+.poster {
+  width: 100%;
+  height: 100%;
+}
+.header {
+  background-color: blue;
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+}
+.textContainer {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.titlecontainer{}
+.overview{
+  margin: 15px;
+}
+.body {
+  width: 800px;
+  height: 600px;
+  background-color: coral;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.description {
+  width: 600px;
+  height: 200px;
+  justify-content: flex-end;
+}
+.castCrew {
+  width: 800px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.castPics {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.oneCast {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 120px;
+}
+.castPhoto {
+  width: 100px;
+}
+.name {
+  display: block;
+}
