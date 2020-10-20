@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { MovieDataService } from '../movie-data.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -10,14 +11,18 @@ export class MovieListComponent implements OnInit {
   @Input() feeds;
   moviePosterLink;
   watchList = [];
-  constructor(private activatedRoute: Router, private router: Router) {
+  constructor(private activatedRoute: Router, private router: Router, private movieService: MovieDataService) {
     // console.log(this.activatedRoute.getCurrentNavigation().extras.state);
-    this.feeds = this.activatedRoute.getCurrentNavigation().extras.state;
-    // console.log('feeds data', this.feeds);
+    this.feeds = this.activatedRoute.getCurrentNavigation().extras.state?.data;
+    console.log('feeds data', this.feeds);
   }
 
   ngOnInit(): void {
     this.moviePosterLink = 'https://image.tmdb.org/t/p/w200';
+    this.movieService.$searchDataListener.subscribe(res => {
+      this.feeds = res
+    })
+
   }
 
   routeToDetails(id) {

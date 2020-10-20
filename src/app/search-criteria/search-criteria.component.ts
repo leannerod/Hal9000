@@ -91,29 +91,12 @@ export class SearchCriteriaComponent implements OnInit {
   changedYear(e) {
     this.year = e.target.value;
   }
-  routeToDetails(id) {
-    const data = this.feeds.find((x) => x.id === id);
-    this.router.navigateByUrl('/movieDetails', {
-      state: {
-        data: data,
-      },
-    });
-    console.log('data', data);
-  }
-
-  addToWatchList(id) {
-    const watchMovie = this.feeds.find((x) => x.id === id);
-    console.log(watchMovie, 'movie');
-    this.watchList.push(watchMovie);
-    // this.selectedItem = this.watchList.includes(id);
-    watchMovie.selectedItem = true;
-  }
-  removeFromWatchList(id){
-    const watchMovie = this.watchList.find((x) => x.id === id);
-    console.log(watchMovie, 'movie');
-    this.watchList.splice(watchMovie, 1);
-    watchMovie.selectedItem = false
-  }
+  // removeFromWatchList(id){
+  //   const watchMovie = this.watchList.find((x) => x.id === id);
+  //   console.log(watchMovie, 'movie');
+  //   this.watchList.splice(watchMovie, 1);
+  //   watchMovie.selectedItem = false
+  // }
 }
 
 
