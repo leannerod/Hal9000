@@ -1,29 +1,30 @@
-<button (click)="routeToWatchList()">Watch List</button>
-
 <div class="moviePoster" *ngFor="let feed of feeds; index as i" feed="feed">
-  <div class="posterImg">
-    <img
-      *ngIf="feed.poster_path != null"
-      src="{{ moviePosterLink }}{{ feed.poster_path }}"
-      width="200"
-      height="300"
-      (click)="routeToDetails(feed.id)"
-    />
-
-    <img
-      *ngIf="feed.poster_path == null"
-      src="https://i.imgur.com/Z2MYNbj.png/large_movie_poster.png"
-      width="200"
-      height="300"
-      (click)="routeToDetails(feed.id)"
-    />
+  <div class="movieContainer">
+    <div class="posterImg">
+      <img
+        *ngIf="feed.poster_path != null"
+        src="{{ moviePosterLink }}{{ feed.poster_path }}"
+        width="200"
+        height="300"
+        (click)="routeToDetails(feed.id)"
+      />
+  
+      <img
+        *ngIf="feed.poster_path == null"
+        src="https://i.imgur.com/Z2MYNbj.png/large_movie_poster.png"
+        width="200"
+        height="300"
+        (click)="routeToDetails(feed.id)"
+      />
+    </div>
+    <div class="toggleWatchListBookmark" (click)="watchListToggle(feed.id)">
+      <i class="far fa-bookmark bookmarkBtn" [ngClass]="{ bookmark: feed.selectedItem }"></i>
+    </div>
+    <div class="movieDetails">
+      <p class="feedRating"><i class="fas fa-star"></i>{{ feed.vote_average }}</p>
+      <p class="feedTitle" (click)="routeToDetails(feed.id)">{{ feed.title }}</p>
+      <p class="feedRelease">{{ feed.release_date | date }}</p>
+    </div>
   </div>
-  <div class="toggleWatchListBookmark" (click)="watchListToggle(feed.id)">
-    <i class="far fa-bookmark" [ngClass]="{ bookmark: feed.selectedItem }"></i>
-  </div>
-  <div class="movieDetails">
-    <p class="feedRating"><i class="fas fa-star"></i>{{ feed.vote_average }}</p>
-    <p class="feedTitle" (click)="routeToDetails(feed.id)">{{ feed.title }}</p>
-    <p class="feedRelease">{{ feed.release_date | date }}</p>
-  </div>
+  
 </div>

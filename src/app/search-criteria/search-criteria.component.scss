@@ -3,16 +3,13 @@
   flex-direction: column;
   margin: 30px;
   cursor: pointer;
+  justify-content: space-around;
+  align-items: center;
+  height: 400px;
 }
 
 .searchMovieBtn {
   margin-left: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  background-color: #4facab;
-  padding: 20px 70px;
-  font-size: 24px;
-  border: 1px solid #418f8d;
 }
 
 .searchMovieBtn:hover {
@@ -44,7 +41,4 @@ h4 {
   width: 200px;
 }
 
-.fas {
-  color: yellow;
-}
 

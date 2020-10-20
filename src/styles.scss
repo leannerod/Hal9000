@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 h1 {
   text-align: center;
@@ -14,10 +15,11 @@ h1 {
 html,
 body {
   height: 100%;
+  width: auto;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #333;
   color: #fff;
 }
@@ -32,25 +34,33 @@ h5 {
 }
 
 button {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #4facab;
+  padding: 15px 30px;
+  font-size: 24px;
+  border: 1px solid #57bdb9;
+  background: rgb(79,172,171);
+  background: linear-gradient(90deg, rgba(79,172,171,1) 0%, rgba(65,143,141,1) 100%);
+  border-radius: 5px;
+  text-shadow: 0px  -1px 0px rgba(0,0,0,.5);
+  box-shadow: 0px 6px 0px #418f8d, 0px 3px 15px rgba(0,0,0,.4);
 }
+
+
 
 .fas {
   color: yellow;
 }
 
-.posterImg {
-  z-index: 1;
-  position: absolute;
-}
-
-.toggleWatchListBookmark {
-  z-index: 2;
-  position: absolute;
-}
-
-.far {
+.bookmarkBtn {
   font-size: 35px;
+  opacity: 0.5;
+}
+
+.bookmarkBtn:hover {
+  cursor: pointer;
 }
 
 .bookmark {
