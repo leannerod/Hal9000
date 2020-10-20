@@ -19,6 +19,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
     SearchCriteriaComponent,
     MovieListComponent,
     WatchListPageComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     BrowserModule,

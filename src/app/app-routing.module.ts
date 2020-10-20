@@ -19,7 +19,11 @@ const routes: Routes = [
     path: 'watchList',
     component: WatchListPageComponent,
   },
-
+  {
+    path: '',
+    redirectTo: '/search',
+    pathMatch: 'full',
+  },
   { path: 'movieDetails', component: MovieDetailsComponent },
 ];
 

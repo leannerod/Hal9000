@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MovieDataService } from '../movie-data.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-details',
@@ -15,8 +14,5 @@ export class MovieDetailsComponent implements OnInit {
     console.log('feeds data', this.feeds);
   }
 
-  ngOnInit() {
-    // this.activatedRoute.data.subscribe((data) => {
-    //   this.feeds = data;
-  }
+  ngOnInit() {}
 }

@@ -1,14 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MovieDataService } from '../movie-data.service';
-import {
-  NgForm,
-  FormBuilder,
-  FormGroup,
-  FormArray,
-  FormControl,
-  Validators,
-} from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-criteria',
@@ -55,7 +48,7 @@ export class SearchCriteriaComponent implements OnInit {
       .subscribe((data) => {
         console.log('data', data.results);
         this.feeds = data.results;
-        this.feeds.forEach(feed => {
+        this.feeds.forEach((feed) => {
           feed.selectedItem = false;
         });
       });
@@ -89,44 +82,5 @@ export class SearchCriteriaComponent implements OnInit {
 
   changedYear(e) {
     this.year = e.target.value;
-  }
-  routeToDetails(id) {
-    const data = this.feeds.find((x) => x.id === id);
-    this.router.navigateByUrl('/movieDetails', {
-      state: {
-        data: data,
-      },
-    });
-    console.log('data', data);
-  }
-
-  watchListToggle(id) {
-    const filteredWatchList = this.watchList.filter((movie) => {
-      return movie.id === id;
-    });
-
-    const watchMovie = this.feeds.find((x) => x.id === id);
-
-    if (filteredWatchList.length === 0) {
-      // not in array so we add it to array
-      this.watchList.push(watchMovie);
-      watchMovie.selectedItem = true;
-      console.log('watchlist', this.watchList)
-    } else {
-      // is in array so we remove from array
-      this.watchList = this.watchList.filter((movie) => {
-        return movie.id !== id;
-      })
-      watchMovie.selectedItem = false;
-      console.log('watchList remove', this.watchList);
-    }
-  }
-
-  routeToWatchList() {
-    this.router.navigateByUrl('/watchList', {
-      state: {
-        data: this.watchList,
-      },
-    });
   }
 }
