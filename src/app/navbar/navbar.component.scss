@@ -57,6 +57,7 @@ nav {
   translate: 50%;
   width: 90%;
   border-radius: 5px;
+  z-index: 3;
 }
 .searchBar {
   display: flex;
@@ -119,6 +120,7 @@ input, select, textarea {
 
   .menu-wrap {
     height: 75px;
+    align-items: flex-start;
   }
 
   .greeting {
@@ -134,16 +136,30 @@ input, select, textarea {
     max-height: 50px;
     padding: 0;
     text-align: right;
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
     padding-left: 0px;
     transition: none;
   }
 
   nav ul li {
     flex-direction: row;
+    padding-top: 10px;
+    justify-content: space-around;
+    width: 50%;
+    align-content: stretch;
   }
-  #checkbox {
-  }
+
+.searchInput {
+  width: 300px;
+  padding-right: 10px;
+}
+
+.btn {
+  padding: 7px;
+  width: 150px;
+}
+
   #checkbox:checked {
     max-height: auto;
     transition: none;
@@ -158,8 +174,17 @@ input, select, textarea {
     display: none;
   }
 
-  button {
-   
+  .profile {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .greeting {
+    padding-left: 5px;
+  }
+
+  .login {
+    width: 20%;
   }
 
 }

@@ -2,7 +2,7 @@
   <div class="menu-wrap">
     <a href="/search"></a>
     <label for="checkbox"><img class="logo" src="assets/logo.png" /></label>
-    <span class="login">Film Galaxy</span>
+    <h1 class="login">Film Galaxy</h1>
     <input class="checkbox" type="checkbox" name="" id="checkbox" />
     <nav class="navigation">
       <ul>
@@ -14,23 +14,23 @@
             class="searchBar"
           >
             <input type="text" #name="ngModel" name="movieSearch" class="searchInput" ngModel />
-            <button type="submit" class="searchMovieBtn">Search Title</button>
+            <button type="submit" class="searchMovieBtn btn">Search Title</button>
           </form>
         </li>
 
         <li>
-          <button routerLink="/search" class="navButton">
+          <button routerLink="/search" class="navButton btn">
             Advanced Search
           </button>
         </li>
         <li>
-          <button routerLink="/watchList" class="navButton">Watch List</button>
+          <button routerLink="/watchList" class="navButton btn">Watch List</button>
         </li>
       </ul>
     </nav>
     <div class="profile">
       <i class="user fas fa-user-circle"></i>
-      <span class="greeting">Where to, DAVE?</span>
+      <p class="greeting">Where to, DAVE?</p>
     </div>
   </div>
 </header>

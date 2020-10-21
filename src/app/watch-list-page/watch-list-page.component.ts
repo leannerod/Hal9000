@@ -11,8 +11,10 @@ export class WatchListPageComponent implements OnInit {
   watchList = [];
   moviePosterLink;
   selectedItem: boolean = true;
+  feeds;
+  movie;
 
-  constructor(private activatedRoute: Router, private movieDataService: MovieDataService) {
+  constructor(private activatedRoute: Router, private router: Router, private movieDataService: MovieDataService) {
     const state = this.activatedRoute.getCurrentNavigation().extras.state;
     if (state) {
       this.watchList = state.data;
@@ -22,7 +24,19 @@ export class WatchListPageComponent implements OnInit {
   ngOnInit(): void {
     this.moviePosterLink = 'https://image.tmdb.org/t/p/w200';
     this.watchList = this.movieDataService.getWatchList();
-
   }
-  
+  removeFromWatchList(i) {
+    this.watchList.splice(i,1);
+  }
+
+  routeToDetails(id) {
+    const data = this.watchList.find((x) => x.id === id);
+    this.router.navigateByUrl('/movieDetails', {
+      state: {
+        data: data,
+      },
+    });
+    console.log('data', data);
+  }
+
 }

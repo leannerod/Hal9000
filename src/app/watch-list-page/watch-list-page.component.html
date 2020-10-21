@@ -1,10 +1,10 @@
 <h1>Watch List</h1>
 <div class="watchList">
   <ul class="movie">
-    <li *ngFor="let movie of watchList; index as i">
+    <li *ngFor="let movie of watchList; index as i" movie="movie">
       <div class="posterImg">
-        <img src="{{ moviePosterLink }}{{ movie.poster_path }}" alt="" />
-        <div class="toggleWatchListBookmark" (click)="addToWatchList()">
+        <img src="{{ moviePosterLink }}{{ movie.poster_path }}" alt="" (click)="routeToDetails(movie.id)"/>
+        <div class="toggleWatchListBookmark" (click)="removeFromWatchList(i)">
           <i class="far fa-bookmark bookmarkBtn" [ngClass]="{ bookmark: selectedItem }"></i>
         </div>
       </div>
