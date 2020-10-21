@@ -9,13 +9,14 @@ import { Router } from '@angular/router';
 })
 export class MovieDataService {
   public $searchDataListener = new Subject();
+  watchList = [];
   constructor(private httpClient: HttpClient, private router: Router) {}
   getMovieData() {
     return this.httpClient.get<any>(
       'https://api.themoviedb.org/3/movie/550?api_key=2a73876fa79cb633ac3d9491816f49b2'
     );
   }
-  getMovieSearchData(searchTerm: string): void {
+  getMovieSearchData(searchTerm: string): any {
     let searchParam = new HttpParams().set('query', searchTerm);
      this.httpClient.get(
       'https://api.themoviedb.org/3/search/movie?api_key=2a73876fa79cb633ac3d9491816f49b2&language=en-US&page=1&include_adult=false',
@@ -40,6 +41,16 @@ export class MovieDataService {
       { params: filterParam }
     );
   }
+getWatchList(): any {
+  return this.watchList;
+}
 
+addToWatchList(movie):void {
+  this.watchList.push(movie);
+}
+
+removeFromWatchList(i):void {
+  this.watchList.splice(i,1);
+}
 
 }

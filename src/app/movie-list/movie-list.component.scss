@@ -1,3 +1,18 @@
+.movieListContainer {
+    background-color: #333;
+    width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.moviePoster {
+    background-color: rgb(65, 64, 64);
+    width: 300px
+}
+
 .movieContainer {
     display: flex;
     flex-direction: column;
@@ -13,10 +28,20 @@
 .posterImg {
     z-index: 1;
     display: inline-block;
+    position: relative;
   }
   
-  .bookmarkBtn {
+  .toggleWatchListBookmark {
     z-index: 2;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
+    position: absolute;
+  }
+
+  @media screen and (min-width: 768px) {
+      .movieListContainer {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+      }
   }

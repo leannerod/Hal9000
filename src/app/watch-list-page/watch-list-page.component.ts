@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MovieDataService} from '../movie-data.service'
 
 @Component({
   selector: 'app-watch-list-page',
@@ -10,7 +11,7 @@ export class WatchListPageComponent implements OnInit {
   watchList = [];
   moviePosterLink;
 
-  constructor(private activatedRoute: Router) {
+  constructor(private activatedRoute: Router, private movieDataService: MovieDataService) {
     console.log(
       'test',
       this.activatedRoute.getCurrentNavigation().extras.state
@@ -23,5 +24,6 @@ export class WatchListPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.moviePosterLink = 'https://image.tmdb.org/t/p/w200';
+    this.watchList = this.movieDataService.getWatchList();
   }
 }

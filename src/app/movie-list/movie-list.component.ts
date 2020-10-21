@@ -45,10 +45,13 @@ export class MovieListComponent implements OnInit {
     if (filteredWatchList.length === 0) {
       // not in array so we add it to array
       this.watchList.push(watchMovie);
+      this.movieService.addToWatchList(watchMovie);
       watchMovie.selectedItem = true;
       console.log('watchlist', this.watchList);
     } else {
       // is in array so we remove from array
+      let index = this.watchList.findIndex(movie => movie.id === id);
+      this.movieService.removeFromWatchList(index);
       this.watchList = this.watchList.filter((movie) => {
         return movie.id !== id;
       });

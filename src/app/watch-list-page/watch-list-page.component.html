@@ -2,7 +2,6 @@
 <div class="watchList">
   <ul class="movie">
     <li *ngFor="let movie of watchList; index as i">
-      <!-- movie poster path does not work -->
       <img src="{{ moviePosterLink }}{{ movie.poster_path }}" alt="" />
       <p>{{ movie.title }}</p>
       <p>{{ movie.release_date }}</p>
