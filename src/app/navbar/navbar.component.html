@@ -1,15 +1,36 @@
-<div class="maincontainer">
-  <a href="/search"><img src="assets/logo.png" height="10%" /></a>
-  <span class="login">Film Galaxy</span>
-  <form
-    #userForm="ngForm"
-    (ngSubmit)="movieSearchSubmit(userForm)"
-    novalidate
-    class="searchBar">
-    <input type="text" #name="ngModel" name="movieSearch" ngModel />
-    <button type="submit" class="searchMovieBtn">Search Movie</button>
-  </form>
-  <button routerLink="/search" class="navButton">Advanced Search</button>
-  <button routerLink="/watchList" class="navButton">Watch List</button>
-  <span class="loginGreeting">Where to, DAVE?</span>
-</div>
+<header class="maincontainer">
+  <div class="menu-wrap">
+    <a href="/search"></a>
+    <label for="checkbox"><img class="logo" src="assets/logo.png" /></label>
+    <span class="login">Film Galaxy</span>
+    <input class="checkbox" type="checkbox" name="" id="checkbox" />
+    <nav class="navigation">
+      <ul>
+        <li>
+          <form
+            #userForm="ngForm"
+            (ngSubmit)="movieSearchSubmit(userForm)"
+            novalidate
+            class="searchBar"
+          >
+            <input type="text" #name="ngModel" name="movieSearch" class="searchInput" ngModel />
+            <button type="submit" class="searchMovieBtn">Search Title</button>
+          </form>
+        </li>
+
+        <li>
+          <button routerLink="/search" class="navButton">
+            Advanced Search
+          </button>
+        </li>
+        <li>
+          <button routerLink="/watchList" class="navButton">Watch List</button>
+        </li>
+      </ul>
+    </nav>
+    <div class="profile">
+      <i class="user fas fa-user-circle"></i>
+      <span class="greeting">Where to, DAVE?</span>
+    </div>
+  </div>
+</header>

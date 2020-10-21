@@ -1,68 +1,71 @@
 .imageContainer {
-  /* z-index: 1; */
   width: 300px;
   height: 500px;
-  vertical-align: top;
-  display: inline-block;
   text-align: center;
+  margin: auto;
+  margin-bottom: 100px;
+  z-index: 1;
+  display: inline-block;
+  position: relative;
 }
 .poster {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
+
+.toggleWatchListBookmark {
+  z-index: 2;
+  top: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+p {
+  margin: 5px;
+}
+
+.toggleWatchListBookmark {
+  z-index: 2;
+  top: 5px;
+  right: 5px;
+  position: absolute;
+}
+
 .header {
-  background-color: blue;
-  width: 800px;
-  height: 600px;
-  display: flex;
-  flex-direction: row;
-}
-.textContainer {
-  width: 500px;
-  height: 500px;
+  background-color: #333;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 90%;
+  height: auto;
+  justify-content: space-between;
+  margin: auto;
 }
-.titlecontainer{}
-.overview{
-  margin: 15px;
+
+@media (min-width: 768px){
+  .header {
+    flex-direction: row;
+    margin-top: 150px;
+    justify-content: space-evenly;
+    padding: 20px;
+  }
+
+  .imageContainer {
+    width: 400px;
+    height: auto;
+  }
+
+  .textContainer {
+    width: 500px;
+    height: auto;
+  }
+
+.movieTitle {
+  margin-bottom: 10px;
 }
-.body {
-  width: 800px;
-  height: 600px;
-  background-color: coral;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+
+p {
+  margin-top: 5px;
 }
-.description {
-  width: 600px;
-  height: 200px;
-  justify-content: flex-end;
-}
-.castCrew {
-  width: 800px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.castPics {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.oneCast {
-  vertical-align: top;
-  display: inline-block;
-  text-align: center;
-  width: 120px;
-}
-.castPhoto {
-  width: 100px;
-}
-.name {
-  display: block;
+
 }

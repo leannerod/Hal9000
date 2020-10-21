@@ -10,12 +10,9 @@ import { MovieDataService} from '../movie-data.service'
 export class WatchListPageComponent implements OnInit {
   watchList = [];
   moviePosterLink;
+  selectedItem: boolean = true;
 
   constructor(private activatedRoute: Router, private movieDataService: MovieDataService) {
-    console.log(
-      'test',
-      this.activatedRoute.getCurrentNavigation().extras.state
-    );
     const state = this.activatedRoute.getCurrentNavigation().extras.state;
     if (state) {
       this.watchList = state.data;
@@ -25,5 +22,7 @@ export class WatchListPageComponent implements OnInit {
   ngOnInit(): void {
     this.moviePosterLink = 'https://image.tmdb.org/t/p/w200';
     this.watchList = this.movieDataService.getWatchList();
+
   }
+  
 }

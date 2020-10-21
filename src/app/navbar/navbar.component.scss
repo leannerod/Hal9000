@@ -1,21 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .maincontainer {
-  height: 50px;
+  height: 75px;
   width: 100%;
-  background-color: #333;
-  color: white;
+  background-color: #1d1c1c;
+  color: #fff;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  margin-bottom: 100px;
+  padding: 10px;
+  align-items: flex-start;
 }
 
 .login {
-    font-family: 'Montserrat', sans-serif;
-    font-size: larger;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  flex-grow: 4;
+  text-align: center;
 }
 
-.loginGreeting {
-    font-family: 'Montserrat', sans-serif;
-    font-size: large;
+.logo {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+.logo:hover{
+  cursor: pointer;
+}
+
+.user {
+  color: #fff;
+  font-size: 45px;
+}
+
+.menu-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+.menuIcon {
+  color: #fff;
+  position: absolute;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #0c010e;
+  top: 100px;
+  translate: 50%;
+  width: 90%;
+  border-radius: 5px;
+}
+.searchBar {
+  display: flex;
+  flex-direction: row;
+}
+
+.greeting {
+  display: none;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  overflow: hidden;
+  max-height: 0px;
+  transition: all 0.5s;
+  justify-content: space-evenly;
+  height: 200px;
+}
+nav ul li {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5px;
+}
+
+.searchInput {
+  flex-grow: 2;
+  background-color: #2f677c;
+}
+
+input, select, textarea {
+  color: #a0f1ef;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#checkbox {
+  display: none;
+}
+#checkbox:checked {
+  max-height: 50px;
+  max-width: 50%;
+  padding: 15px, 0;
+  transition: all 0.5s;
+}
+
+#checkbox:checked ~ nav ul {
+  max-height: 200px;
+  padding: 15px 0;
+}
+
+.greeting {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media (min-width: 768px) {
+  .menuIcon {
+    display: none;
+  }
+
+  .menu-wrap {
+    height: 75px;
+  }
+
+  .greeting {
+    display: inline;
+  }
+
+  nav {
+    position: relative;
+    top: -10px;
+    background-color: transparent;
+  }
+  nav ul {
+    max-height: 50px;
+    padding: 0;
+    text-align: right;
+    display: inline-flex;
+    padding-left: 0px;
+    transition: none;
+  }
+
+  nav ul li {
+    flex-direction: row;
+  }
+  #checkbox {
+  }
+  #checkbox:checked {
+    max-height: auto;
+    transition: none;
+    padding: 0;
+  }
+  #checkbox:checked ~ nav ul {
+    max-height: auto;
+    padding: 0;
+  }
+
+  .checkbox {
+    display: none;
+  }
 }

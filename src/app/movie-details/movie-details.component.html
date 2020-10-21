@@ -5,21 +5,23 @@
       src="https://image.tmdb.org/t/p/w200{{ feeds.data.poster_path }}"
       alt=""
     />
-    <p>Released: {{ feeds?.data.release_date | date }}</p>
-    <p>
-      Rating: <i class="fas fa-star"></i>{{ feeds.data.vote_average }} ({{
-        feeds.data.vote_count
-      }})
-    </p>
+    <div class="toggleWatchListBookmark" (click)="addToWatchList()">
+      <i
+        class="far fa-bookmark bookmarkBtn"
+        [ngClass]="{ bookmark: selectedItem }"
+      ></i>
+    </div>
+    <div class="imageDetails">
+      <p>Released: {{ feeds?.data.release_date | date }}</p>
+      <p>
+        Rating: <i class="fas fa-star"></i>{{ feeds.data.vote_average }} ({{
+          feeds.data.vote_count
+        }})
+      </p>
+    </div>
   </div>
   <div class="textContainer">
-    <div class="titleContainer">
       <h1 class="movieTitle">{{ feeds?.data.title }}</h1>
-    </div>
-    <div class="overview">
-      <h3>
-        {{ feeds?.data.overview }}
-      </h3>
+      <p>{{ feeds?.data.overview }}</p>
     </div>
   </div>
-</div>

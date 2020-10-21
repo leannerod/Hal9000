@@ -2,7 +2,12 @@
 <div class="watchList">
   <ul class="movie">
     <li *ngFor="let movie of watchList; index as i">
-      <img src="{{ moviePosterLink }}{{ movie.poster_path }}" alt="" />
+      <div class="posterImg">
+        <img src="{{ moviePosterLink }}{{ movie.poster_path }}" alt="" />
+        <div class="toggleWatchListBookmark" (click)="addToWatchList()">
+          <i class="far fa-bookmark bookmarkBtn" [ngClass]="{ bookmark: selectedItem }"></i>
+        </div>
+      </div>
       <p>{{ movie.title }}</p>
       <p>{{ movie.release_date }}</p>
       <p><i class="fas fa-star"></i>{{ movie.vote_average }}</p>
